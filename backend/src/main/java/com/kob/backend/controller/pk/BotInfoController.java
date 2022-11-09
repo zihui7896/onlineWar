@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/pk/")
+@RequestMapping("/")
 public class BotInfoController {
 
     @RequestMapping("getbotinfo/")
