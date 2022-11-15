@@ -1,7 +1,7 @@
-import { ACGameObject } from "./AcGameObject";
+import { AcGameObject } from "./AcGameObject";
 import { Cell } from "./Cell";
 
-export class Snake extends ACGameObject {
+export class Snake extends AcGameObject {
     constructor (info, gamemap) {
         super();
 
