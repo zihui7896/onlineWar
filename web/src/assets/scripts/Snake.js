@@ -9,8 +9,8 @@ export class Snake extends AcGameObject {
         this.color = info.color;
         this.gamemap = gamemap;
 
-        this.cells = [new Cell(info.r, info.c)]; // 存放蛇的身体，cells[0]存放蛇头
-        this.next_cell = null;
+        this.cells = [new Cell(info.r, info.c)];  // 存放蛇的身体，cells[0]存放蛇头
+        this.next_cell = null;  // 下一步的目标位置
 
         this.eps = 1e-2;  // 允许的误差
         this.speed = 5; // 蛇每秒走5个格子
@@ -65,9 +65,7 @@ export class Snake extends AcGameObject {
         for (let i = k; i > 0; i --) {
             this.cells[i] = JSON.parse(JSON.stringify(this.cells[i - 1]));
         }
-        if (!this.gamemap.check_valid(this.next_cell)) {
-            this.status = "die";
-        }
+
     }
 
     update_move() {

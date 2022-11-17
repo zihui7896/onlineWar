@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PkIndexView from '@/views/pk/PkIndexView'
 import NotFound from '@/views/error/NotFound'
 import RanklistIndexView from '@/views/ranklist/RanklistIndexView'
-import RecordIndextView from '@/views/record/RecordIndexView'
+import RecordIndexView from '@/views/record/RecordIndexView'
 import UserBotIndexView from '@/views/user/bot/UserBotIndexView'
 import UserAccountLoginView from '@/views/user/account/UserAccountLoginView'
 import UserAccountRegisterView from '@/views/user/account/UserAccountRegisterView'
@@ -15,7 +15,7 @@ const routes = [
     name: "home",
     redirect: "/pk/",
     meta: {
-      requsetAuth: true,
+      requestAuth: true,
     }
   },
   {
@@ -23,15 +23,15 @@ const routes = [
     name: "pk_index",
     component: PkIndexView,
     meta: {
-      requsetAuth: true,
+      requestAuth: true,
     }
   },
   {
     path: "/record/",
     name: "record_index",
-    component: RecordIndextView,
+    component: RecordIndexView,
     meta: {
-      requsetAuth: true,
+      requestAuth: true,
     }
   },
   {
@@ -56,7 +56,7 @@ const routes = [
     name: "user_account_login",
     component: UserAccountLoginView,
     meta: {
-      requsetAuth: false,
+      requestAuth: false,
     }
   },
   {
@@ -64,13 +64,16 @@ const routes = [
     name: "user_account_register",
     component: UserAccountRegisterView,
     meta: {
-      requsetAuth: false,
+      requestAuth: false,
     }
   },
   {
     path: "/404/",
     name: "404",
     component: NotFound,
+    meta: {
+      requestAuth: false,
+    }
   },
   {
     path: "/:catchAll(.*)",
@@ -84,7 +87,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requsetAuth && !store.state.user.is_login) {
+  if (to.meta.requestAuth && !store.state.user.is_login) {
     next({name: "user_account_login"});
   } else {
     next();

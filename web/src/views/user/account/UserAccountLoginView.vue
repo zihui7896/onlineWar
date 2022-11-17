@@ -41,14 +41,14 @@ export default {
             store.dispatch("getinfo", {
                 success() {
                     router.push({ name: "home" });
-                    store.commit("updatePullinInfo", false);
+                    store.commit("updatePullingInfo", false);
                 },
                 error() {
-                    store.commit("updatePullinInfo", false);
+                    store.commit("updatePullingInfo", false);
                 }
             })
         } else {
-            store.commit("updatePullinInfo", false);
+            store.commit("updatePullingInfo", false);
         }
 
         const login = () => {

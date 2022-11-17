@@ -12,8 +12,8 @@
                         <input v-model="password" type="password" class="form-control" id="password" placeholder="请输入密码">
                     </div>
                     <div class="mb-3">
-                        <label for="confirmedpassword" class="form-label">确认密码</label>
-                        <input v-model="confirmedpassword" type="password" class="form-control" id="confirmedpassword" placeholder="请确认密码">
+                        <label for="confirmedPassword" class="form-label">确认密码</label>
+                        <input v-model="confirmedPassword" type="password" class="form-control" id="confirmedPassword" placeholder="请再次输入密码">
                     </div>
                     <div class="error-message">{{ error_message }}</div>
                     <button type="submit" class="btn btn-primary">提交</button>
@@ -37,33 +37,31 @@ export default {
     setup() {
         let username = ref('');
         let password = ref('');
-        let confirmedpassword = ref('');
+        let confirmedPassword = ref('');
         let error_message = ref('');
 
         const register = () => {
-            $.ajax ({
-              url: "http://127.0.0.1:3000/user/account/register/",
-              type: "post",
-              data: {
-                username: username.value,
-                password: password.value,
-                confirmedPassword: confirmedpassword.value,
-              },
-              success(resp) {
-                if (resp.error_message === "success") {
-                    
-                    router.push({name: "user_account_login"});
-                } else {
-                    error_message.value = resp.error_message;
-                }
-              },
-              
+            $.ajax({
+                url: "http://127.0.0.1:3000/user/account/register/",
+                type: "post",
+                data: {
+                    username: username.value,
+                    password: password.value,
+                    confirmedPassword: confirmedPassword.value,
+                },
+                success(resp) {
+                    if (resp.error_message === "success") {
+                        router.push({name: "user_account_login"});
+                    } else {
+                        error_message.value = resp.error_message;
+                    }
+                },
             });
         }
         return {
             username,
             password,
-            confirmedpassword,
+            confirmedPassword,
             error_message,
             register,
         }
