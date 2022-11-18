@@ -1,8 +1,8 @@
-import { AcGameObject } from "./AcGameObject";
+import {AcGameObject} from "./AcGameObject";
 
-export class Wall extends AcGameObject{
+export class Wall extends AcGameObject {
     constructor(r, c, gamemap) {
-    
+
         super();
 
         this.r = r;
@@ -21,6 +21,6 @@ export class Wall extends AcGameObject{
 
         ctx.fillStyle = this.color;
         ctx.fillRect(this.c * L, this.r * L, L, L);
-    }   
+    }
 
 }

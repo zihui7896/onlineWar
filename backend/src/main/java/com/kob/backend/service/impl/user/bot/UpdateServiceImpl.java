@@ -19,6 +19,7 @@ public class UpdateServiceImpl implements UpdateService {
 
     @Autowired
     private BotMapper botMapper;
+
     @Override
     public Map<String, String> update(Map<String, String> data) {
         UsernamePasswordAuthenticationToken authenticationToken =
@@ -81,7 +82,7 @@ public class UpdateServiceImpl implements UpdateService {
                 bot.getRating(),
                 bot.getCreatetime(),
                 new Date()
-                );
+        );
         botMapper.updateById(new_bot);
         map.put("error_message", "success");
         return map;

@@ -7,10 +7,9 @@ export default {
         photo: "",
         token: "",
         is_login: false,
-        pulling_info: true,  // 是否正在从云端拉取信息
+        pulling_info: true,  // 锟角凤拷锟斤拷锟节达拷锟狡讹拷锟斤拷取锟斤拷息
     },
-    getters: {
-    },
+    getters: {},
     mutations: {
         updateUser(state, user) {
             state.id = user.id;
@@ -83,6 +82,5 @@ export default {
             context.commit("logout");
         }
     },
-    modules: {
-    }
+    modules: {}
 }

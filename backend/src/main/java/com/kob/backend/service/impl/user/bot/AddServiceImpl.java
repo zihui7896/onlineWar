@@ -19,6 +19,7 @@ public class AddServiceImpl implements AddService {
 
     @Autowired
     private BotMapper botMapper;
+
     @Override
     public Map<String, String> add(Map<String, String> data) {
         UsernamePasswordAuthenticationToken authenticationToken =

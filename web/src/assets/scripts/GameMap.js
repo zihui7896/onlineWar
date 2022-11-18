@@ -1,6 +1,6 @@
-import { AcGameObject } from "./AcGameObject";
-import { Wall } from "./Wall";
-import { Snake } from './Snake';
+import {AcGameObject} from "./AcGameObject";
+import {Wall} from "./Wall";
+import {Snake} from './Snake';
 
 export class GameMap extends AcGameObject {
     constructor(ctx, parent, store) {
@@ -13,7 +13,7 @@ export class GameMap extends AcGameObject {
 
         this.rows = 13;
         this.cols = 14;
-        
+
         this.inner_walls_count = 20;
         this.walls = [];
 
@@ -26,8 +26,8 @@ export class GameMap extends AcGameObject {
     create_walls() {
         const g = this.store.state.pk.gamemap;
 
-        for (let r = 0; r < this.rows; r ++ ) {
-            for (let c = 0; c < this.cols; c ++ ) {
+        for (let r = 0; r < this.rows; r++) {
+            for (let c = 0; c < this.cols; c++) {
                 if (g[r][c]) {
                     this.walls.push(new Wall(r, c, this));
                 }
@@ -44,7 +44,7 @@ export class GameMap extends AcGameObject {
             else if (e.key === 'd') d = 1;
             else if (e.key === 's') d = 2;
             else if (e.key === 'a') d = 3;
-            
+
             if (d >= 0) {
                 this.store.state.pk.socket.send(JSON.stringify({
                     event: "move",
@@ -56,7 +56,7 @@ export class GameMap extends AcGameObject {
 
     start() {
         this.create_walls();
-        
+
         this.add_listening_events();
     }
 
@@ -89,9 +89,9 @@ export class GameMap extends AcGameObject {
         for (const snake of this.snakes) {
             let k = snake.cells.length;
             if (!snake.check_tail_increasing()) {  // 当蛇尾会前进的时候，蛇尾不要判断
-                k -- ;
+                k--;
             }
-            for (let i = 0; i < k; i ++ ) {
+            for (let i = 0; i < k; i++) {
                 if (snake.cells[i].r === cell.r && snake.cells[i].c === cell.c)
                     return false;
             }
@@ -110,8 +110,8 @@ export class GameMap extends AcGameObject {
 
     render() {
         const color_even = "#AAD751", color_odd = "#A2D149";
-        for (let r = 0; r < this.rows; r ++ ) {
-            for (let c = 0; c < this.cols; c ++ ) {
+        for (let r = 0; r < this.rows; r++) {
+            for (let c = 0; c < this.cols; c++) {
                 if ((r + c) % 2 == 0) {
                     this.ctx.fillStyle = color_even;
                 } else {
