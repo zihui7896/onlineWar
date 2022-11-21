@@ -13,6 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Player {
     private Integer id;
+    private Integer botId; // -1 是本人上场 else bot
+    private String botCode;
     private Integer sx;
     private Integer sy;
     private List<Integer> steps;

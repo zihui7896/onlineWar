@@ -3,7 +3,7 @@
     <div class="container">
       <router-link class="navbar-brand" :to="{name: 'home'}">
       <img src="../assets/images/Navbarlogo.png" alt="" width="30" height="24" class="d-inline-block align-text-top" style="border-radius: 50%;">
-      Botcc
+      <a style="font-family: 华文行楷;">Botcc</a>
     </router-link>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
