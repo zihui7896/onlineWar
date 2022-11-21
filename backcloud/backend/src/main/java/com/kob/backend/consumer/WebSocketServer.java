@@ -32,7 +32,7 @@ public class WebSocketServer {
     public static RecordMapper recordMapper;
     private static BotMapper botMapper;
     public static RestTemplate restTemplate;
-    private Game game = null;
+    public Game game = null;
     private final static String addPlaysUrl = "http://127.0.0.1:3001/player/add/";
     private final static String removePlaysUrl = "http://127.0.0.1:3001/player/remove/";
     @Autowired

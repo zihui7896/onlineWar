@@ -158,7 +158,7 @@ public class Game extends Thread {
                 you.getStepsString() + ")";
     }
     private void sendBotCode(Player player) {
-        if (player.getId().equals(-1)) return; // 本人上场
+        if (player.getBotId().equals(-1)) return; // 本人上场
         MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
         data.add("user_id", player.getId().toString());
         data.add("bot_code", player.getBotCode());
