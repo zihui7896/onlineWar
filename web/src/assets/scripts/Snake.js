@@ -114,6 +114,16 @@ export class Snake extends AcGameObject {
         if (this.status === "die") {
             ctx.fillStyle = "white";
         }
+        // this.img = new Image();
+        // this.img.src = "@/assets/images/Navbarlogo.png";
+
+        // this.ctx.save();
+        // this.ctx.beginPath();
+        // this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        // this.ctx.stroke();
+        // this.ctx.clip();
+        // this.ctx.drawImage(this.img, this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2); 
+        // this.ctx.restore();
         for (const cell of this.cells) {
             ctx.beginPath();
             ctx.arc(cell.x * L, cell.y * L, L / 2 * 0.8, 0, Math.PI * 2);
@@ -131,7 +141,14 @@ export class Snake extends AcGameObject {
                 ctx.fillRect(Math.min(a.x, b.x) * L, (a.y - 0.4) * L, Math.abs(a.x - b.x) * L, L * 0.8);
             }
         }
-
+        ctx.fillStyle = "white";
+        for (let i = 0; i < 2; i++) {
+            const eye_x = (this.cells[0].x + this.eye_dx[this.eye_direction][i] * 0.15) * L;
+            const eye_y = (this.cells[0].y + this.eye_dy[this.eye_direction][i] * 0.15) * L;
+            ctx.beginPath();
+            ctx.arc(eye_x, eye_y, L * 0.1, 0, Math.PI * 2);
+            ctx.fill();
+        }
         ctx.fillStyle = "black";
         for (let i = 0; i < 2; i++) {
             const eye_x = (this.cells[0].x + this.eye_dx[this.eye_direction][i] * 0.15) * L;
@@ -140,5 +157,6 @@ export class Snake extends AcGameObject {
             ctx.arc(eye_x, eye_y, L * 0.045, 0, Math.PI * 2);
             ctx.fill();
         }
+    
     }
 }
