@@ -5,18 +5,17 @@
                 <div class="user-photo">
                     <img :src="$store.state.user.photo" alt="">
                 </div>
-                <div class="user-username">
+                <div class="user-username" style="font-family: 华文行楷;">
                     {{ $store.state.user.username }}
                 </div>
             </div>
             <div class="col-4">
                 <div class="user-select-bot">
-                    <select v-model="select_bot" class="form-select" aria-label="Default select example">
+                    <select v-model="select_bot" class="form-select" aria-label="Default select example" style="font-family:隶书;">
                         <option  value="-1" selected>本人对战</option>
                         <option v-for="bot in bots" :key="bot.id" :value="bot.id">
                             {{ bot.title }}
                         </option>
-                    
                     </select>
                 </div>
             </div>
@@ -24,7 +23,7 @@
                 <div class="user-photo">
                     <img :src="$store.state.pk.opponent_photo" alt="">
                 </div>
-                <div class="user-username">
+                <div class="user-username" style="font-family: 华文行楷;">
                     {{ $store.state.pk.opponent_username }}
                 </div>
             </div>

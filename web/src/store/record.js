@@ -1,8 +1,9 @@
 export default {
     state: {
         is_record: false,
-        a_step: "",
-        b_step: "",
+        a_steps: "",
+        b_steps: "",
+        record_loser: "",
     },
     getters: {
 
@@ -12,9 +13,12 @@ export default {
             state.is_record = is_record;
         },
         updateSteps(state, data) {
-            state.a_step = data.a_step;
-            state.b_step = data.b_step;
+            state.a_steps = data.a_steps;
+            state.b_steps = data.b_steps;
         },
+        updateRecordLoser(state, loser) {
+            state.record_loser = loser;
+        }
     },
     actions: {
 
