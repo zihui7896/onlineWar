@@ -88,7 +88,6 @@ public class MatchingPool extends Thread{
     }
     @Override
     public void run() {
-        super.run();
         while (true) {
             try {
                 Thread.sleep(1000);
