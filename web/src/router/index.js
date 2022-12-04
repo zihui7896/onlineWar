@@ -48,7 +48,7 @@ const routes = [
         name: "ranklist_index",
         component: RanklistIndexView,
         meta: {
-            requsetAuth: true,
+            requestAuth: true,
         }
 
     },
@@ -57,7 +57,7 @@ const routes = [
         name: "user_bot_index",
         component: UserBotIndexView,
         meta: {
-            requsetAuth: true,
+            requestAuth: true,
         }
     },
     {
