@@ -93,6 +93,6 @@ public class Bot implements java.util.function.Supplier<Integer>{
     }
 }
 ```
-原git仓库地址: git clone git@git.acwing.com:zihui/kob.git,  git网站[https://git.acwing.com/zihui/kob](https://git.acwing.com/zihui/kob)
+[https://git.acwing.com/zihui/kob](https://git.acwing.com/zihui/kob)
 
 Web网址[https://app3657.acapp.acwing.com.cn/pk/](https://app3657.acapp.acwing.com.cn/pk/)
