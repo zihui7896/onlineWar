@@ -1,10 +1,8 @@
-# kob
-在线对战平台
+### 在线对战平台
 游戏说明:
 
-- 游戏分为三种: 人人，人机， 机机，人控制 w s d a 移动
-- Al 需要写dfs和bfs 只支持Java代码
-- Al 可以创建 无数个 但每个Al 有唯一的Id 即 Al 名字不能重复
+- 游戏分为三种: 人人，人机， 机机，人可以控制 w s d a 移动
+- Al 需要写dfs或bfs， 暂时只支持Java代码
 Al 代码例子
 ```java
 package com.kob.botrunningsystem.utils;
