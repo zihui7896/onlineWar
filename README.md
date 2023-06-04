@@ -1,4 +1,9 @@
 ### 在线对战平台
+
+#### 使用SpringBoot + MySQL + MyBatis + SpringCloud + Vue3
+#### 使用 JWT 完成 注册登录功能， 其中两个小的微服务 匹配系统 和 Al 代码的执行
+
+
 游戏说明:
 
 - 游戏分为三种: 人人，人机， 机机，人可以控制 w s d a 移动
