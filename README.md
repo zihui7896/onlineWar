@@ -1,7 +1,7 @@
 ### 在线对战平台
 
-#### 使用SpringBoot + MySQL + MyBatis + SpringCloud + Vue3
-#### 使用 JWT 完成 注册登录功能， 其中两个小的微服务 匹配系统 和 Al 代码的执行
+#### 使用SpringBoot + MySQL + MyBatis-Plus + SpringCloud + Vue3
+#### 使用 JWT 完成 注册登录功能， 其中有两个小的微服务 匹配系统 和 Al 代码的执行 用 SpringCloud 实现
 
 
 游戏说明:
